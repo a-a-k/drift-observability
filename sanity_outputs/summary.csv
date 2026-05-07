@@ -1,0 +1,13 @@
+regime,monitor,false_alarm_rate,detection_rate,median_detection_delay,median_lead_time,attribution_fidelity,churn_continuity_error,threshold
+stationary,euclidean,0.05,,,,,,0.0320248
+stationary,aitchison,0.05,,,,,,0.0952964
+stationary,boundary_balance,0,,,,,,0.286707
+benign_redistribution,euclidean,1,,,,1,,0.0320248
+benign_redistribution,aitchison,1,,,,1,,0.0952964
+benign_redistribution,boundary_balance,0,,,,1,,0.286707
+risky_ratio_drift,euclidean,,1,-44,44,1,,0.0320248
+risky_ratio_drift,aitchison,,1,-45,45,1,,0.0952964
+risky_ratio_drift,boundary_balance,,1,-13,13,1,,0.286707
+churn_lineage_aware,euclidean,,1,-44,44,1,0,0.0320248
+churn_lineage_aware,aitchison,,1,-45,45,1,0,0.0952964
+churn_lineage_aware,boundary_balance,,1,-13,13,1,0,0.286707
