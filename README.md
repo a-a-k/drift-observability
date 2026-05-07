@@ -39,3 +39,7 @@ The script uses:
 ## Interpretation
 
 This is a synthetic mechanism check, not empirical evidence from operational systems. It tests whether a policy-aligned balance monitor distinguishes benign redistribution from drift toward a ratio boundary, and whether canonical lineage-aware aggregation preserves the signal under split/merge churn.
+
+## License
+
+This artifact is released under the MIT License. See `LICENSE`.
