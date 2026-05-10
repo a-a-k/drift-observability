@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import datetime as dt
 import math
 from pathlib import Path
 from typing import Iterable
@@ -43,6 +44,7 @@ OUTPUT_DIR = Path("sanity_outputs")
 SUMMARY_CSV = OUTPUT_DIR / "summary.csv"
 SUMMARY_MD = OUTPUT_DIR / "summary.md"
 EXAMPLE_PDF = OUTPUT_DIR / "example_trajectories.pdf"
+PDF_METADATA_DATE = dt.datetime(2026, 5, 5, tzinfo=dt.timezone.utc)
 
 
 def closure(x: np.ndarray | Iterable[float]) -> np.ndarray:
@@ -508,7 +510,18 @@ def plot_examples(
         lines2, labels2 = ax2.get_legend_handles_labels()
         ax.legend(lines + lines2, labels + labels2, loc="upper left", fontsize=7)
 
-    fig.savefig(EXAMPLE_PDF)
+    fig.savefig(
+        EXAMPLE_PDF,
+        metadata={
+            "Title": "Drift observability synthetic sanity-check trajectories",
+            "Author": "Anonymous Author(s)",
+            "Subject": "Deterministic synthetic sanity-check figure",
+            "Creator": "sanity_check.py",
+            "Producer": "matplotlib",
+            "CreationDate": PDF_METADATA_DATE,
+            "ModDate": PDF_METADATA_DATE,
+        },
+    )
     plt.close(fig)
 
 
